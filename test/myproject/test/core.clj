@@ -4,7 +4,7 @@
 
 (deftest empty-array-is-false (assert (= -1 (chop 3 []) )))
 (deftest size-one-array-wrong-param-is-false (assert (= -1 (chop 3 [1]) )))
-;(deftest size-one-array-right-param-on-0-is-0  (assert (=  0 (chop 1 [1]) )))
+(deftest size-one-array-right-param-on-0-is-0  (assert (=  0 (chop 1 [1]) )))
  
 ;(deftest size-three-array-right-param-on-0-is-0 (assert (=  0 (chop 1 [1 3 5]) )))
 ;(deftest size-three-array-right-param-on-1-is-1 (assert (=  1 (chop 3 [1 3 5]) )))
