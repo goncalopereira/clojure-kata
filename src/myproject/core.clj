@@ -9,16 +9,20 @@
 )
 
 (defn chop [number array] 
-	(if (first-position-is-correct number array)
-		0
-		(if (first-position-is-correct number (rest array))
-			1
-			(if (first-position-is-correct number (rest (rest array)))
-				2
-				-1
+	(loop [position 0 sub-array array]
+		(do
+			 (println position sub-array)
+	
+			(if (first-position-is-correct number sub-array)
+				position
+				(if (= 0 (count sub-array))
+					-1
+					(recur (+ position 1) (rest sub-array))
+				)
 			)
 		)
-	) 
+	)
 )
+	
 
 
