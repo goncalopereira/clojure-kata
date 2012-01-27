@@ -1,7 +1,7 @@
 (ns myproject.core)
 
 (defn chop [number array]
-	(if (or (nil? (last array)) (< (last array) number))
+	(if (or (= 0 (count array)) (< (last array) number))
 		-1 
 		(loop [position 0 sub-array array]
 			(do (println position sub-array)
