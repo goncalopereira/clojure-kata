@@ -1,21 +1,18 @@
 (ns myproject.core)
 
-(defn chop [number array]
-	(if (or (= 0 (count array)) (< (last array) number))
-		-1 
-		(loop [position 0 sub-array array]
-			(do (println position sub-array)
-			(if (or (= 0 (count sub-array)) (< number (first sub-array)))
-				-1
-				(if (= number (first sub-array))
-					position
-					(recur (+ position 1) (rest sub-array))
-				)
-			))
-		)
-	)	
+(defn number-is-out-of-bounds [number array]
+	(or (= 0 (count array)) (< number (first array)) (> number (last array)))
 )
 
-	
-
-
+(defn chop [number array]
+	(loop [position 0 sub-array array]
+		(do (println position sub-array)
+		(if (number-is-out-of-bounds number sub-array)
+			-1
+			(if (= number (first sub-array))
+				position
+				(recur (+ position 1) (rest sub-array))
+			)
+		))
+	)
+)	
