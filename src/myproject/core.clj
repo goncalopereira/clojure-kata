@@ -1,11 +1,7 @@
 (ns myproject.core)
 
 (defn first-position-is-correct [number array]
-		(if (integer? array)
-			(= number array)
-			(= number (first array))
-	
-	)
+		(= number (first array))	
 )
 
 (defn chop [number array] 
