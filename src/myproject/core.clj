@@ -6,15 +6,15 @@
 	)
 )
 
-(defn reduce-to-valid [result-set-from-map]
+(defn reduce-to-valids [result-set-from-map]
 		(filter #(not (nil? %))	result-set-from-map)
 )
 
-(defn return-result [list-valid-positions]
+(defn return-result [valid-positions]
 	(cond 
-		(empty? list-valid-positions)	-1
-		(= (count list-valid-positions) 1)	(first list-valid-positions)
-		:else	list-valid-positions		
+		(empty? valid-positions)	-1
+		(= (count valid-positions) 1)	(first valid-positions)
+		:else	valid-positions		
 	)
 )
 
@@ -23,5 +23,5 @@
 )
 
 (defn chop [number array]	
-	(return-result 	(reduce-to-valid (map-position-check number array)))
+	(return-result 	(reduce-to-valids (map-position-check number array)))
 )
