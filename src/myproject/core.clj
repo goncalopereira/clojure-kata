@@ -23,15 +23,17 @@
 	)
 )
 
+(defn get-map-index-value [number array]
+		(map 
+			#(check-position % number) 
+			(map-indexed vector array)	
+		)
+)
+
 (defn chop [number array]	
-	(let [list-valid-positions	
-		(get-valid-positions
-				(map 
-					#(check-position % number) 
-					(map-indexed vector array)	
-				)
-			)
-		]
+	(let [list-valid-positions 
+		(get-valid-positions (get-map-index-value number array))
+		]		
 		
 		(return-result list-valid-positions)
 	)	
