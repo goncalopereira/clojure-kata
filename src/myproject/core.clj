@@ -16,7 +16,10 @@
 		0
 		(if (first-position-is-correct number (rest array))
 			1
-			-1
+			(if (first-position-is-correct number (rest (rest array)))
+				2
+				-1
+			)
 		)
 	) 
 )
