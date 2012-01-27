@@ -11,7 +11,7 @@
 (deftest size-three-array-right-param-on-2-is-2  (is (=  2 (chop 5 [1 3 5]) )))
 (deftest size-three-array-wrong-param--0-is-false  (is (= -1 (chop 0 [1 3 5]) )))
 (deftest size-three-array-wrong-param-2-is-false (is (= -1 (chop 2 [1 3 5]) )))
-;(deftest size-three-array-wrong-param-4-is-false  (is (= -1 (chop 4 [1 3 5]) )))
+(deftest size-three-array-wrong-param-4-is-false  (is (= -1 (chop 4 [1 3 5]) )))
 ;(deftest size-three-array-wrong-param-6-is-false  (is (= -1 (chop 6 [1 3 5]) )))
  
 ;(deftest size-four-array-right-param-on-0-is-0 (is (=  0 (chop 1 [1 3 5 7]) )))
