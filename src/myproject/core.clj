@@ -13,6 +13,13 @@
 		)
 )
 
+(defn return-result [list-valid-positions]
+	(if (empty? list-valid-positions)
+		-1
+		(first list-valid-positions)
+	)
+)
+
 (defn chop [number array]	
 	(let [list-valid-positions	
 		(get-valid-positions
@@ -22,11 +29,8 @@
 				)
 			)
 		]
-	
-		(if (empty? list-valid-positions)
-			-1
-			(first list-valid-positions)
-		)
+		
+		(return-result list-valid-positions)
 	)	
 )
 
