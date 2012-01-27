@@ -1,13 +1,10 @@
 (ns myproject.core)
 
 (defn first-position-is-correct [number array]
-	(do 
-		(println number array)
 		(if (integer? array)
 			(= number array)
 			(= number (first array))
 	
-		)
 	)
 )
 
