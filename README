@@ -1,13 +1,7 @@
-# myproject
+# Karate Chop Kata
 
-FIXME: write description
+My first attempt on Clojure, do Karate Chop kata 
 
-## Usage
+Then try out Map Reduce/Filter
 
-FIXME: write
-
-## License
-
-Copyright (C) 2012 FIXME
-
-Distributed under the Eclipse Public License, the same as Clojure.
+Add tests and behaviour for multiple values
