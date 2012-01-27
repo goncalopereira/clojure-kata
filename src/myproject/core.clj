@@ -1,7 +1,7 @@
 (ns myproject.core)
 
 (defn number-is-out-of-bounds [number array]
-	(or (= 0 (count array)) (< number (first array)) (> number (last array)))
+	(or (empty? array) (< number (first array)) (> number (last array)))
 )
 
 (defn chop [number array]
