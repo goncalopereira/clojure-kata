@@ -1,37 +1,27 @@
 (ns myproject.core)
 
-(defn check-position [position-value number]
+(defn position-check [position-value number]
 	(when (= number (last position-value))
 		(first position-value)
 	)
 )
 
-(defn get-valid-positions [result-set-from-map]
-		(filter 
-			#(not (nil? %))
-			result-set-from-map
-		)
+(defn reduce-to-valid [result-set-from-map]
+		(filter #(not (nil? %))	result-set-from-map)
 )
 
 (defn return-result [list-valid-positions]
-	(if (empty? list-valid-positions)
-		-1
-		(if (= (count list-valid-positions) 1)
-			(first list-valid-positions)
-			list-valid-positions
-		)
+	(cond 
+		(empty? list-valid-positions)	-1
+		(= (count list-valid-positions) 1)	(first list-valid-positions)
+		:else	list-valid-positions		
 	)
 )
 
-(defn get-map-index-value [number array]
-		(map 
-			#(check-position % number) 
-			(map-indexed vector array)	
-		)
+(defn map-position-check [number array]
+		(map #(position-check % number) (map-indexed vector array))
 )
 
 (defn chop [number array]	
-	(return-result 	(get-valid-positions (get-map-index-value number array)))
+	(return-result 	(reduce-to-valid (map-position-check number array)))
 )
-		
-
