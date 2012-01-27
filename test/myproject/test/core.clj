@@ -24,3 +24,8 @@
 (deftest size-four-array-wrong-param-6-is-false  (is (= -1 (chop 6 [1 3 5 7]) )))
 (deftest size-four-array-wrong-param-8-is-false  (is (= -1 (chop 8 [1 3 5 7]) )))
 
+;homework, add multiple valid positions
+(deftest size-four-array-right-param-on-0-and-1 (is (=  [0 1] (chop 1 [1 1 5 7]) )))
+(deftest size-four-array-right-param-on-1-and-2  (is (=  [1 2] (chop 3 [1 3 3 7]) )))
+(deftest size-four-array-right-param-on-2-and-3 (is (=  [2 3] (chop 5 [1 3 5 5]) )))
+

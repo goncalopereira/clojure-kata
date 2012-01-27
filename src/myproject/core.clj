@@ -16,7 +16,10 @@
 (defn return-result [list-valid-positions]
 	(if (empty? list-valid-positions)
 		-1
-		(first list-valid-positions)
+		(if (= (count list-valid-positions) 1)
+			(first list-valid-positions)
+			list-valid-positions
+		)
 	)
 )
 
