@@ -1,15 +1,14 @@
 (ns myproject.core)
 
 (defn check-position [position-value number]
-	(if (= number (last position-value))
+	(when (= number (last position-value))
 		(first position-value)
-		-1
 	)
 )
 
 (defn get-valid-positions [result-set-from-map]
 		(filter 
-			#(not= -1 %)
+			#(not (nil? %))
 			result-set-from-map
 		)
 )
@@ -30,6 +29,4 @@
 		)
 	)	
 )
-
-
 
