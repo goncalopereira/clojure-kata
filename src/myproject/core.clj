@@ -31,11 +31,7 @@
 )
 
 (defn chop [number array]	
-	(let [list-valid-positions 
-		(get-valid-positions (get-map-index-value number array))
-		]		
-		
-		(return-result list-valid-positions)
-	)	
+	(return-result 	(get-valid-positions (get-map-index-value number array)))
 )
+		
 
