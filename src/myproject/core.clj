@@ -2,13 +2,14 @@
 
 (defn chop [number array] 
 	(loop [position 0 sub-array array]
-		(if (= 0 (count sub-array))
+		(do (println position sub-array)
+		(if (or (= 0 (count sub-array)) (< number (first sub-array)))
 			-1
 			(if (= number (first sub-array))
 				position
 				(recur (+ position 1) (rest sub-array))
 			)
-		)
+		))
 	)
 )
 
